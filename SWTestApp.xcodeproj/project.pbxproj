@@ -8,17 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		339CAD5829119E65005A72AF /* SWTestAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD5729119E65005A72AF /* SWTestAppApp.swift */; };
-		339CAD5A29119E65005A72AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD5929119E65005A72AF /* ContentView.swift */; };
+		339CAD5A29119E65005A72AF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD5929119E65005A72AF /* MainView.swift */; };
 		339CAD5C29119E66005A72AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339CAD5B29119E66005A72AF /* Assets.xcassets */; };
 		339CAD5F29119E66005A72AF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339CAD5E29119E66005A72AF /* Preview Assets.xcassets */; };
+		339CAD672911AB70005A72AF /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 339CAD662911AB70005A72AF /* SDWebImageSwiftUI */; };
+		339CAD6D2911AC1F005A72AF /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD6C2911AC1F005A72AF /* APIBuilder.swift */; };
+		339CAD742911B1BB005A72AF /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD732911B1BB005A72AF /* APIError.swift */; };
+		339CAD772911B2B4005A72AF /* UnSplashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD762911B2B4005A72AF /* UnSplashService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		339CAD5429119E65005A72AF /* SWTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339CAD5729119E65005A72AF /* SWTestAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTestAppApp.swift; sourceTree = "<group>"; };
-		339CAD5929119E65005A72AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		339CAD5929119E65005A72AF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		339CAD5B29119E66005A72AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		339CAD5E29119E66005A72AF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		339CAD6C2911AC1F005A72AF /* APIBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBuilder.swift; sourceTree = "<group>"; };
+		339CAD6F2911AE6A005A72AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		339CAD732911B1BB005A72AF /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		339CAD762911B2B4005A72AF /* UnSplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSplashService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339CAD672911AB70005A72AF /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,9 +60,14 @@
 		339CAD5629119E65005A72AF /* SWTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				339CAD752911B29F005A72AF /* Service */,
+				339CAD712911B1AB005A72AF /* Helper */,
+				339CAD702911B103005A72AF /* Resources */,
+				339CAD6B2911AC13005A72AF /* Endpoint */,
+				339CAD6A2911AB8A005A72AF /* ViewModel */,
+				339CAD692911AB86005A72AF /* Views */,
+				339CAD682911AB81005A72AF /* Model */,
 				339CAD5729119E65005A72AF /* SWTestAppApp.swift */,
-				339CAD5929119E65005A72AF /* ContentView.swift */,
-				339CAD5B29119E66005A72AF /* Assets.xcassets */,
 				339CAD5D29119E66005A72AF /* Preview Content */,
 			);
 			path = SWTestApp;
@@ -65,6 +79,69 @@
 				339CAD5E29119E66005A72AF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		339CAD682911AB81005A72AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		339CAD692911AB86005A72AF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				339CAD5929119E65005A72AF /* MainView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		339CAD6A2911AB8A005A72AF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		339CAD6B2911AC13005A72AF /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				339CAD6C2911AC1F005A72AF /* APIBuilder.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		339CAD702911B103005A72AF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				339CAD6F2911AE6A005A72AF /* Info.plist */,
+				339CAD5B29119E66005A72AF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		339CAD712911B1AB005A72AF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				339CAD722911B1B1005A72AF /* Error */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		339CAD722911B1B1005A72AF /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				339CAD732911B1BB005A72AF /* APIError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		339CAD752911B29F005A72AF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				339CAD762911B2B4005A72AF /* UnSplashService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +160,9 @@
 			dependencies = (
 			);
 			name = SWTestApp;
+			packageProductDependencies = (
+				339CAD662911AB70005A72AF /* SDWebImageSwiftUI */,
+			);
 			productName = SWTestApp;
 			productReference = 339CAD5429119E65005A72AF /* SWTestApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +191,9 @@
 				Base,
 			);
 			mainGroup = 339CAD4B29119E65005A72AF;
+			packageReferences = (
+				339CAD652911AB70005A72AF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 339CAD5529119E65005A72AF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,7 +220,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				339CAD5A29119E65005A72AF /* ContentView.swift in Sources */,
+				339CAD6D2911AC1F005A72AF /* APIBuilder.swift in Sources */,
+				339CAD742911B1BB005A72AF /* APIError.swift in Sources */,
+				339CAD5A29119E65005A72AF /* MainView.swift in Sources */,
+				339CAD772911B2B4005A72AF /* UnSplashService.swift in Sources */,
 				339CAD5829119E65005A72AF /* SWTestAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,7 +281,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -249,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -269,11 +355,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SWTestApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SWTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -297,11 +383,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SWTestApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SWTestApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -337,6 +423,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		339CAD652911AB70005A72AF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		339CAD662911AB70005A72AF /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 339CAD652911AB70005A72AF /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 339CAD4C29119E65005A72AF /* Project object */;
 }
