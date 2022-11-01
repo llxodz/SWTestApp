@@ -15,6 +15,9 @@
 		339CAD6D2911AC1F005A72AF /* APIBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD6C2911AC1F005A72AF /* APIBuilder.swift */; };
 		339CAD742911B1BB005A72AF /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD732911B1BB005A72AF /* APIError.swift */; };
 		339CAD772911B2B4005A72AF /* UnSplashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD762911B2B4005A72AF /* UnSplashService.swift */; };
+		339CAD792911B665005A72AF /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD782911B665005A72AF /* PhotoModel.swift */; };
+		339CAD7C2911BA61005A72AF /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD7B2911BA61005A72AF /* ResultState.swift */; };
+		339CAD7E2911BACD005A72AF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD7D2911BACD005A72AF /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +30,9 @@
 		339CAD6F2911AE6A005A72AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		339CAD732911B1BB005A72AF /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		339CAD762911B2B4005A72AF /* UnSplashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSplashService.swift; sourceTree = "<group>"; };
+		339CAD782911B665005A72AF /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
+		339CAD7B2911BA61005A72AF /* ResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
+		339CAD7D2911BACD005A72AF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 		339CAD5629119E65005A72AF /* SWTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				339CAD7A2911BA57005A72AF /* States */,
 				339CAD752911B29F005A72AF /* Service */,
 				339CAD712911B1AB005A72AF /* Helper */,
 				339CAD702911B103005A72AF /* Resources */,
@@ -85,6 +92,7 @@
 		339CAD682911AB81005A72AF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				339CAD782911B665005A72AF /* PhotoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +108,7 @@
 		339CAD6A2911AB8A005A72AF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				339CAD7D2911BACD005A72AF /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -142,6 +151,14 @@
 				339CAD762911B2B4005A72AF /* UnSplashService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		339CAD7A2911BA57005A72AF /* States */ = {
+			isa = PBXGroup;
+			children = (
+				339CAD7B2911BA61005A72AF /* ResultState.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,11 +237,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				339CAD7C2911BA61005A72AF /* ResultState.swift in Sources */,
+				339CAD792911B665005A72AF /* PhotoModel.swift in Sources */,
 				339CAD6D2911AC1F005A72AF /* APIBuilder.swift in Sources */,
 				339CAD742911B1BB005A72AF /* APIError.swift in Sources */,
 				339CAD5A29119E65005A72AF /* MainView.swift in Sources */,
 				339CAD772911B2B4005A72AF /* UnSplashService.swift in Sources */,
 				339CAD5829119E65005A72AF /* SWTestAppApp.swift in Sources */,
+				339CAD7E2911BACD005A72AF /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
