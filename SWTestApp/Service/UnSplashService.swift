@@ -9,5 +9,5 @@ import Foundation
 import Combine
 
 protocol UnSplashService {
-    func request(from endpoint: UnSplashAPI) -> AnyPublisher<>
+    func request(from endpoint: UnSplashAPI)
 }

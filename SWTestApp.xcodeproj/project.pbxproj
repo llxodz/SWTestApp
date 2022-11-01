@@ -67,8 +67,9 @@
 				339CAD6A2911AB8A005A72AF /* ViewModel */,
 				339CAD692911AB86005A72AF /* Views */,
 				339CAD682911AB81005A72AF /* Model */,
-				339CAD5729119E65005A72AF /* SWTestAppApp.swift */,
 				339CAD5D29119E66005A72AF /* Preview Content */,
+				339CAD5729119E65005A72AF /* SWTestAppApp.swift */,
+				339CAD6F2911AE6A005A72AF /* Info.plist */,
 			);
 			path = SWTestApp;
 			sourceTree = "<group>";
@@ -114,7 +115,6 @@
 		339CAD702911B103005A72AF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				339CAD6F2911AE6A005A72AF /* Info.plist */,
 				339CAD5B29119E66005A72AF /* Assets.xcassets */,
 			);
 			path = Resources;
