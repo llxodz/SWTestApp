@@ -9,5 +9,5 @@ import Foundation
 
 struct PhotoModel: Identifiable, Codable {
     let id: String
-    let photoUrls: [String:String]
+    let urls: [String : String]
 }

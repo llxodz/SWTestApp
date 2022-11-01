@@ -37,7 +37,7 @@ class MainViewModelBase: ObservableObject, MainViewModel {
                     self.state = .failed(error: error)
                 }
             } receiveValue: { response in
-                self.photos.append(response)
+                self.photos.append(contentsOf: response)
             }
         self.cancellables.insert(cancellable)
     }

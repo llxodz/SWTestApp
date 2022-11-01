@@ -32,8 +32,7 @@ extension UnSplashAPI: APIBuilder {
     }
     
     var urlRequest: URLRequest {
-        let url = URL(string: "\(self.baseUrl)\(self.path)?count=30$client_id=\(self.apiKey)")
-        print(url)
+        let url = URL(string: "\(self.baseUrl)\(self.path)?count=30&client_id=\(self.apiKey)")
         return URLRequest(url: url!)
     }
     
