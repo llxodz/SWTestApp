@@ -6,29 +6,26 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
+
+private enum Constants {
+    static let lazyGridSpacing: CGFloat = 16
+}
 
 struct MainView: View {
     
     @StateObject var viewModel = MainViewModelBase(service: UnSplashServiceBase())
-    
     private var grids = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        
         Group {
             switch viewModel.state {
             case .loading: ProgressView()
             case .failed(let error): Text("\(error.localizedDescription)")
             case .success(let response):
                 ScrollView(.vertical, showsIndicators: false) {
-                    LazyVGrid(columns: grids, spacing: 20) {
+                    LazyVGrid(columns: grids, spacing: Constants.lazyGridSpacing) {
                         ForEach(response) { response in
-                            AnimatedImage(url: URL(string: response.urls["thumb"]!))
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: (UIScreen.main.bounds.width - 50) / 2, height: 200)
-                                .cornerRadius(15)
+                            PhotoCell(imageURL: response.urls.thumb)
                         }
                     }
                 }

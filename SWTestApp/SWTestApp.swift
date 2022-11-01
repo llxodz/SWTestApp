@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SWTestAppApp: App {
+struct SWTestApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
