@@ -21,22 +21,6 @@ struct MainView: View {
             case .loading: ProgressView()
             case .failed(let error): Text("\(error.localizedDescription)")
             case .success(let response):
-//                ScrollView(.vertical, showsIndicators: false) {
-//                    VStack(spacing: 15) {
-//                        ForEach(response) { response in
-//                            HStack(spacing: 10) {
-//                                ForEach(0..<3) { image in
-//                                    AnimatedImage(url: URL(string: response.urls["thumb"]!))
-//                                        .resizable()
-//                                        .aspectRatio(contentMode: .fill)
-//                                        .frame(width: (UIScreen.main.bounds.width - 180) / 2, height: 120)
-//                                        .cornerRadius(15)
-//                                }
-//                            }
-//                        }
-//                    }
-//                }
-                
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVGrid(columns: grids, spacing: 20) {
                         ForEach(response) { response in
