@@ -12,6 +12,8 @@ private enum Constants {
     static let imageHeight: CGFloat = 200
     static let imageWidth: CGFloat = (UIScreen.main.bounds.width - 50) / 2
     static let imageCornerRadius: CGFloat = 12
+    
+    static let spacingLazyVStack: CGFloat = 8
 }
 
 struct HStackPhotosView: View {
@@ -48,19 +50,19 @@ struct HStackPhotosView: View {
     
     var body: some View {
         HStack(alignment: .top) {
-            LazyVStack(spacing: 8) {
+            LazyVStack(spacing: Constants.spacingLazyVStack) {
                 ForEach(splitArray[0]) { photo in
                     NavigationLink(destination: DetailPhotoView(imageURL: photo.urls.full)) {
                         PhotoCell(imageURL: photo.urls.thumb)
-                            .onAppear(perform: {onAppearClosure(photo)})
+                            .onAppear(perform: { onAppearClosure(photo) })
                     }
                 }
             }
-            LazyVStack(spacing: 8) {
+            LazyVStack(spacing: Constants.spacingLazyVStack) {
                 ForEach(splitArray[1]) { photo in
                     NavigationLink(destination: DetailPhotoView(imageURL: photo.urls.full)) {
                         PhotoCell(imageURL: photo.urls.thumb)
-                            .onAppear(perform: {onAppearClosure(photo)})
+                            .onAppear(perform: { onAppearClosure(photo) })
                     }
                 }
             }

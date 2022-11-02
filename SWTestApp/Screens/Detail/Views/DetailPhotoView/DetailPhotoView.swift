@@ -8,15 +8,21 @@
 import SwiftUI
 import SDWebImageSwiftUI
 
+private enum Constants {
+    static let imageHeight: CGFloat = 300
+}
+
 struct DetailPhotoView: View {
     
     let imageURL: String
     
     var body: some View {
-        AnimatedImage(url: URL(string: imageURL))
+        WebImage(url: URL(string: imageURL))
             .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: UIScreen.main.bounds.width - 16 / 2, height: (UIScreen.main.bounds.height - 12) / 2)
+            .indicator(.activity)
+            .transition(.fade(duration: 0.5))
+            .scaledToFill()
+            .frame(width: UIScreen.main.bounds.width, height: Constants.imageHeight, alignment: .center)
     }
 }
 
