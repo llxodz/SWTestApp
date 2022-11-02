@@ -22,10 +22,14 @@ struct MainView: View {
             case .loading: ProgressView()
             case .failed(let error): Text("\(error.localizedDescription)")
             case .success(let response):
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVGrid(columns: grids, spacing: Constants.lazyGridSpacing) {
-                        ForEach(response) { response in
-                            PhotoCell(imageURL: response.urls.thumb)
+                NavigationView {
+                    ScrollView(.vertical, showsIndicators: false) {
+                        LazyVGrid(columns: grids, spacing: Constants.lazyGridSpacing) {
+                            ForEach(response) { response in
+                                NavigationLink(destination: DetailPhotoView(imageURL: response.urls.full)) {
+                                    PhotoCell(imageURL: response.urls.thumb)
+                                }
+                            }
                         }
                     }
                 }

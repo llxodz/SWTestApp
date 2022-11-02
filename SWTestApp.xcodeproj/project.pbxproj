@@ -19,6 +19,7 @@
 		339CAD7C2911BA61005A72AF /* ResultState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD7B2911BA61005A72AF /* ResultState.swift */; };
 		339CAD7E2911BACD005A72AF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD7D2911BACD005A72AF /* MainViewModel.swift */; };
 		33C0CD1F2911DFD30016327C /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0CD1E2911DFD20016327C /* PhotoCell.swift */; };
+		33C0CD212911E5AA0016327C /* DetailPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C0CD202911E5AA0016327C /* DetailPhotoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		339CAD7B2911BA61005A72AF /* ResultState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultState.swift; sourceTree = "<group>"; };
 		339CAD7D2911BACD005A72AF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		33C0CD1E2911DFD20016327C /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		33C0CD202911E5AA0016327C /* DetailPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPhotoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				339CAD832911DF9B005A72AF /* PhotoCell */,
 				339CAD812911DEFC005A72AF /* MainView */,
+				33C0CD202911E5AA0016327C /* DetailPhotoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 				339CAD7C2911BA61005A72AF /* ResultState.swift in Sources */,
 				339CAD792911B665005A72AF /* PhotoModel.swift in Sources */,
 				339CAD6D2911AC1F005A72AF /* APIBuilder.swift in Sources */,
+				33C0CD212911E5AA0016327C /* DetailPhotoView.swift in Sources */,
 				339CAD742911B1BB005A72AF /* APIError.swift in Sources */,
 				339CAD5A29119E65005A72AF /* MainView.swift in Sources */,
 				33C0CD1F2911DFD30016327C /* PhotoCell.swift in Sources */,

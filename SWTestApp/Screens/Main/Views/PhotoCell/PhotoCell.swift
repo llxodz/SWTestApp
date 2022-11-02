@@ -15,6 +15,7 @@ private enum Constants {
 }
 
 struct PhotoCell: View {
+    
     let imageURL: String
     
     var body: some View {
