@@ -28,16 +28,19 @@ extension UnSplashAPI: APIBuilder {
     }
     
     var path: String {
-        return "/photos/random"
-    }
-    
-    var urlRequest: URLRequest {
-        let url = URL(string: "\(self.baseUrl)\(self.path)?count=30&client_id=\(self.apiKey)")
-        return URLRequest(url: url!)
+        switch self {
+        case .getPhotos:
+            return "/photos/random"
+        }
     }
     
     var apiKey: String {
         guard let apiKey = Bundle.main.infoDictionary?["apiKey"] as? String else { return "" }
         return apiKey
+    }
+    
+    var urlRequest: URLRequest {
+        let url = URL(string: "\(self.baseUrl)\(self.path)?count=30&client_id=\(self.apiKey)")
+        return URLRequest(url: url!)
     }
 }

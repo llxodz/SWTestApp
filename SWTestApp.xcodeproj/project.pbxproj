@@ -51,6 +51,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3320822D291282C600A411C0 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3320822E291282E000A411C0 /* Views */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		3320822E291282E000A411C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3320822F291282EA00A411C0 /* DetailPhotoView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3320822F291282EA00A411C0 /* DetailPhotoView */ = {
+			isa = PBXGroup;
+			children = (
+				33C0CD202911E5AA0016327C /* DetailPhotoView.swift */,
+			);
+			path = DetailPhotoView;
+			sourceTree = "<group>";
+		};
 		339CAD4B29119E65005A72AF = {
 			isa = PBXGroup;
 			children = (
@@ -75,8 +99,8 @@
 				339CAD702911B103005A72AF /* Resources */,
 				339CAD6B2911AC13005A72AF /* Endpoint */,
 				339CAD692911AB86005A72AF /* Screens */,
-				339CAD682911AB81005A72AF /* Model */,
 				339CAD5D29119E66005A72AF /* Preview Content */,
+				339CAD682911AB81005A72AF /* Model */,
 				339CAD5729119E65005A72AF /* SWTestApp.swift */,
 				339CAD6F2911AE6A005A72AF /* Info.plist */,
 			);
@@ -103,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				339CAD7F2911DEE8005A72AF /* Main */,
+				3320822D291282C600A411C0 /* Detail */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -170,7 +195,6 @@
 			children = (
 				339CAD832911DF9B005A72AF /* PhotoCell */,
 				339CAD812911DEFC005A72AF /* MainView */,
-				33C0CD202911E5AA0016327C /* DetailPhotoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

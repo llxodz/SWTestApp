@@ -19,7 +19,7 @@ extension APIError: LocalizedError {
         case .decodingError:
             return "Не удалось декодировать объект"
         case .errorCode(let code):
-            return "\(code) - статус ошибки от сервера"
+            return "\(code) - код ошибки от сервера"
         case .unknown:
             return "Ошибка неизвестна"
         }
