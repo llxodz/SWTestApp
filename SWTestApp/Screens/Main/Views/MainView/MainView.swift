@@ -15,7 +15,7 @@ private enum Constants {
 
 struct MainView: View {
     
-    @StateObject var viewModel = MainViewModelBase(service: UnSplashServiceBase())
+    @StateObject var viewModel = MainViewModelBase(service: UnsplashServiceBase())
     
     var body: some View {
         ZStack {

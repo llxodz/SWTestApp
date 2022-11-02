@@ -20,7 +20,6 @@ struct DetailPhotoView: View {
         WebImage(url: URL(string: imageURL))
             .resizable()
             .indicator(.activity)
-            .transition(.fade(duration: 0.5))
             .scaledToFill()
             .frame(width: UIScreen.main.bounds.width, height: Constants.imageHeight, alignment: .center)
     }

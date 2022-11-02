@@ -14,20 +14,20 @@ protocol MainViewModel {
 
 class MainViewModelBase: ObservableObject, MainViewModel {
     
-    private let service: UnSplashService
+    private let service: UnsplashService
     private(set) var photos = [PhotoModel]()
     private var cancellables = Set<AnyCancellable>()
     private var page: Int = 0
     
     @Published private(set) var state: ResultState = .loading
     
-    init(service: UnSplashService) {
+    init(service: UnsplashService) {
         self.service = service
     }
     
     func getPhotos() {
         let cancellable = service
-            .request(from: .getPhotos, page: self.page)
+            .request(from: .getPhotos, page: self.page)?
             .sink { [weak self] result in
                 switch result {
                 case .finished: break
@@ -41,6 +41,7 @@ class MainViewModelBase: ObservableObject, MainViewModel {
                 self.state = .success(content: self.photos)
                 self.page += 10
             }
+        guard let cancellable = cancellable else { return }
         self.cancellables.insert(cancellable)
     }
 }

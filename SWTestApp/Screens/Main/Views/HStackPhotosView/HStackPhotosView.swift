@@ -9,10 +9,6 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 private enum Constants {
-    static let imageHeight: CGFloat = 200
-    static let imageWidth: CGFloat = (UIScreen.main.bounds.width - 50) / 2
-    static let imageCornerRadius: CGFloat = 12
-    
     static let spacingLazyVStack: CGFloat = 8
 }
 
@@ -28,23 +24,23 @@ struct HStackPhotosView: View {
 
     private var splitArray: [[PhotoModel]] {
         var result: [[PhotoModel]] = []
-        var list1: [PhotoModel] = []
-        var list2: [PhotoModel] = []
+        var firstList: [PhotoModel] = []
+        var secondList: [PhotoModel] = []
         
         photos.forEach { photo in
             let index = photos.firstIndex {$0.id == photo.id }
             
             if let index = index {
                 if index % 2 == 0  {
-                    list1.append(photo)
+                    firstList.append(photo)
                 } else {
-                    list2.append(photo)
+                    secondList.append(photo)
                 }
             }
         }
         
-        result.append(list1)
-        result.append(list2)
+        result.append(firstList)
+        result.append(secondList)
         return result
     }
     

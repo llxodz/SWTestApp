@@ -1,5 +1,5 @@
 //
-//  ApiBuilder.swift
+//  APIBuilder.swift
 //  SWTestApp
 //
 //  Created by Ilya Gavrilov on 01.11.2022.
@@ -8,17 +8,17 @@
 import Foundation
 
 protocol APIBuilder {
-    func urlRequest(page: Int) -> URLRequest
+    func urlRequest(page: Int) -> URLRequest?
     var baseUrl: URL { get }
     var path: String { get }
     var apiKey: String { get }
 }
 
-enum UnSplashAPI {
+enum UnsplashAPI {
     case getPhotos
 }
 
-extension UnSplashAPI: APIBuilder {
+extension UnsplashAPI: APIBuilder {
     
     var baseUrl: URL {
         switch self {
@@ -29,8 +29,7 @@ extension UnSplashAPI: APIBuilder {
     
     var path: String {
         switch self {
-        case .getPhotos:
-            return "/photos"
+        case .getPhotos: return "/photos"
         }
     }
     
@@ -39,8 +38,10 @@ extension UnSplashAPI: APIBuilder {
         return apiKey
     }
     
-    func urlRequest(page: Int) -> URLRequest {
+    func urlRequest(page: Int) -> URLRequest? {
         let url = URL(string: "\(self.baseUrl)\(self.path)?client_id=\(self.apiKey)&page=\(page)&content_filter=high")
-        return URLRequest(url: url!)
+        guard let url = url else { return nil }
+        
+        return URLRequest(url: url)
     }
 }
