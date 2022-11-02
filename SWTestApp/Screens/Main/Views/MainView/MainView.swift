@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  SWTestApp
 //
 //  Created by Ilya Gavrilov on 01.11.2022.
@@ -9,33 +9,38 @@ import SwiftUI
 
 private enum Constants {
     static let lazyGridSpacing: CGFloat = 16
+    
+    static let titleLabel: String = "Photos"
 }
 
 struct MainView: View {
     
     @StateObject var viewModel = MainViewModelBase(service: UnSplashServiceBase())
-    private var grids = [GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
-        Group {
+        ZStack {
             switch viewModel.state {
             case .loading: ProgressView()
-            case .failed(let error): Text("\(error.localizedDescription)")
-            case .success(let response):
+            case .failed(let error): Text(error.localizedDescription)
+            case .success(let photos):
                 NavigationView {
                     ScrollView(.vertical, showsIndicators: false) {
-                        LazyVGrid(columns: grids, spacing: Constants.lazyGridSpacing) {
-                            ForEach(response) { response in
-                                NavigationLink(destination: DetailPhotoView(imageURL: response.urls.full)) {
-                                    PhotoCell(imageURL: response.urls.thumb)
-                                }
-                            }
+                        HStackPhotosView(photos) { photo in
+                            checkUpdatePhotos(photos, photo)
                         }
                     }
+                    .navigationTitle(Constants.titleLabel)
                 }
             }
         }
         .onAppear(perform: viewModel.getPhotos)
+    }
+    
+    private func checkUpdatePhotos(_ photos: [PhotoModel], _ photo: PhotoModel) {
+        guard let lastPhoto = photos.last else { return }
+        if lastPhoto.id == photo.id {
+            viewModel.getPhotos()
+        }
     }
 }
 

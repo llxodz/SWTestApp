@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		332082372913085100A411C0 /* HStackPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332082362913085100A411C0 /* HStackPhotosView.swift */; };
 		339CAD5829119E65005A72AF /* SWTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD5729119E65005A72AF /* SWTestApp.swift */; };
 		339CAD5A29119E65005A72AF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339CAD5929119E65005A72AF /* MainView.swift */; };
 		339CAD5C29119E66005A72AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339CAD5B29119E66005A72AF /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		332082362913085100A411C0 /* HStackPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HStackPhotosView.swift; sourceTree = "<group>"; };
 		339CAD5429119E65005A72AF /* SWTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SWTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		339CAD5729119E65005A72AF /* SWTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTestApp.swift; sourceTree = "<group>"; };
 		339CAD5929119E65005A72AF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -73,6 +75,14 @@
 				33C0CD202911E5AA0016327C /* DetailPhotoView.swift */,
 			);
 			path = DetailPhotoView;
+			sourceTree = "<group>";
+		};
+		3320823D2913149300A411C0 /* HStackPhotosView */ = {
+			isa = PBXGroup;
+			children = (
+				332082362913085100A411C0 /* HStackPhotosView.swift */,
+			);
+			path = HStackPhotosView;
 			sourceTree = "<group>";
 		};
 		339CAD4B29119E65005A72AF = {
@@ -193,6 +203,7 @@
 		339CAD802911DEF1005A72AF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3320823D2913149300A411C0 /* HStackPhotosView */,
 				339CAD832911DF9B005A72AF /* PhotoCell */,
 				339CAD812911DEFC005A72AF /* MainView */,
 			);
@@ -303,6 +314,7 @@
 				339CAD792911B665005A72AF /* PhotoModel.swift in Sources */,
 				339CAD6D2911AC1F005A72AF /* APIBuilder.swift in Sources */,
 				33C0CD212911E5AA0016327C /* DetailPhotoView.swift in Sources */,
+				332082372913085100A411C0 /* HStackPhotosView.swift in Sources */,
 				339CAD742911B1BB005A72AF /* APIError.swift in Sources */,
 				339CAD5A29119E65005A72AF /* MainView.swift in Sources */,
 				33C0CD1F2911DFD30016327C /* PhotoCell.swift in Sources */,
@@ -437,6 +449,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SWTestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 2K66K5CLW8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SWTestApp/Info.plist;
@@ -465,6 +478,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SWTestApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 2K66K5CLW8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SWTestApp/Info.plist;

@@ -17,6 +17,7 @@ class MainViewModelBase: ObservableObject, MainViewModel {
     private let service: UnSplashService
     private(set) var photos = [PhotoModel]()
     private var cancellables = Set<AnyCancellable>()
+    private var page: Int = 0
     
     @Published private(set) var state: ResultState = .loading
     
@@ -25,19 +26,20 @@ class MainViewModelBase: ObservableObject, MainViewModel {
     }
     
     func getPhotos() {
-        self.state = .loading
-        
         let cancellable = service
-            .request(from: .getPhotos)
-            .sink { result in
+            .request(from: .getPhotos, page: self.page)
+            .sink { [weak self] result in
                 switch result {
-                case .finished:
-                    self.state = .success(content: self.photos)
+                case .finished: break
                 case .failure(let error):
+                    guard let self = self else { return }
                     self.state = .failed(error: error)
                 }
-            } receiveValue: { response in
+            } receiveValue: { [weak self] response in
+                guard let self = self else {return}
                 self.photos.append(contentsOf: response)
+                self.state = .success(content: self.photos)
+                self.page += 10
             }
         self.cancellables.insert(cancellable)
     }

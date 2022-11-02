@@ -8,7 +8,7 @@
 import Foundation
 
 protocol APIBuilder {
-    var urlRequest: URLRequest { get }
+    func urlRequest(page: Int) -> URLRequest
     var baseUrl: URL { get }
     var path: String { get }
     var apiKey: String { get }
@@ -30,7 +30,7 @@ extension UnSplashAPI: APIBuilder {
     var path: String {
         switch self {
         case .getPhotos:
-            return "/photos/random"
+            return "/photos"
         }
     }
     
@@ -39,8 +39,8 @@ extension UnSplashAPI: APIBuilder {
         return apiKey
     }
     
-    var urlRequest: URLRequest {
-        let url = URL(string: "\(self.baseUrl)\(self.path)?count=30&client_id=\(self.apiKey)")
+    func urlRequest(page: Int) -> URLRequest {
+        let url = URL(string: "\(self.baseUrl)\(self.path)?client_id=\(self.apiKey)&page=\(page)&content_filter=high")
         return URLRequest(url: url!)
     }
 }

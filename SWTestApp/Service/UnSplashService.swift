@@ -9,15 +9,15 @@ import Foundation
 import Combine
 
 protocol UnSplashService {
-    func request(from endpoint: UnSplashAPI) -> AnyPublisher<[PhotoModel], APIError>
+    func request(from endpoint: UnSplashAPI, page: Int) -> AnyPublisher<[PhotoModel], APIError>
 }
 
 struct UnSplashServiceBase: UnSplashService {
     
-    func request(from endpoint: UnSplashAPI) -> AnyPublisher<[PhotoModel], APIError> {
+    func request(from endpoint: UnSplashAPI, page: Int) -> AnyPublisher<[PhotoModel], APIError> {
         return URLSession
             .shared
-            .dataTaskPublisher(for: endpoint.urlRequest)
+            .dataTaskPublisher(for: endpoint.urlRequest(page: page))
             .receive(on: DispatchQueue.main)
             .mapError { _ in APIError.unknown }
             .flatMap { data, response -> AnyPublisher<[PhotoModel], APIError> in
